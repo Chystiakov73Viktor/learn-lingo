@@ -6,11 +6,11 @@ export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
     alias: {
-      src: './src',
-      components: './src/components',
-      pages: './src/pages',
-      constants: './src/constants',
-      images: './src/images',
+      src: '/src',
+      components: '/src/components',
+      pages: '/src/pages',
+      constants: '/src/constants',
+      images: '/src/images',
     },
   },
 });
