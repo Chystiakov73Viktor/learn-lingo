@@ -176,7 +176,10 @@ export const CardMarkupItem = ({ cardData }) => {
         </ul>
         <ul className="listSpeaks">
           <li className="itemSpeaks">
-            Speaks: <span className="languages">{languages.join(', ')}</span>
+            Speaks:{' '}
+            <span className="languages">
+              {languages ? languages.join(', ') : ''}
+            </span>
           </li>
           <li className="itemSpeaks">
             Lesson info: <span className="lesson">{lesson_info}</span>
@@ -245,18 +248,19 @@ export const CardMarkupItem = ({ cardData }) => {
           </>
         )}
         <ul className="listButton">
-          {levels.map((level, index) => (
-            <li key={index} className="itemButton">
-              <button
-                className={`levelButton ${
-                  selectedLevel === level ? 'selected' : ''
-                }`}
-                type="button"
-              >
-                {level}
-              </button>
-            </li>
-          ))}
+          {levels &&
+            levels.map((level, index) => (
+              <li key={index} className="itemButton">
+                <button
+                  className={`levelButton ${
+                    selectedLevel === level ? 'selected' : ''
+                  }`}
+                  type="button"
+                >
+                  {level}
+                </button>
+              </li>
+            ))}
         </ul>
         {showReviews && (
           <button
