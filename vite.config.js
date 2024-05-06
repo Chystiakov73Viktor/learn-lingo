@@ -13,4 +13,5 @@ export default defineConfig({
       images: '/src/images',
     },
   },
+  base: "/learn-lingo/",
 });
