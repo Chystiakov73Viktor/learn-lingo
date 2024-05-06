@@ -12,11 +12,12 @@ export const selectFilteredCard = createSelector(
     selectFilteredPrice,
     selectFilteredLevel,
   ],
-  (originalData, languagesFiltered, priceFilter, levelFilter) => {
+  (teachers, languagesFiltered, priceFilter, levelFilter) => {
+    console.log('teachers: ', teachers);
     let filteredCard = [];
 
       if (languagesFiltered) {
-        filteredCard = filteredCard.concat(originalData.filter(card =>
+        filteredCard = filteredCard.concat(teachers.filter(card =>
           card.languages.some(language =>
             language.toLowerCase().includes(languagesFiltered.toLowerCase())
           )
@@ -24,13 +25,13 @@ export const selectFilteredCard = createSelector(
       }
 
       if (priceFilter) {
-        filteredCard = filteredCard.concat(originalData.filter(
+        filteredCard = filteredCard.concat(teachers.filter(
           card => card.price_per_hour === Number(priceFilter)
         ));
       }
 
       if (levelFilter) {
-        filteredCard = filteredCard.concat(originalData.filter(card =>
+        filteredCard = filteredCard.concat(teachers.filter(card =>
           card.levels.some(level =>
             level.toLowerCase().includes(levelFilter.toLowerCase())
           )
@@ -38,7 +39,7 @@ export const selectFilteredCard = createSelector(
       }
 
       if (filteredCard.length === 0) {
-        filteredCard = [...originalData];
+        filteredCard = [...teachers];
       }
 
     return filteredCard;

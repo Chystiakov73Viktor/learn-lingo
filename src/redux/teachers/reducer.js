@@ -12,6 +12,7 @@ const teacherSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(getTeachers.fulfilled, (state, action) => {
+        console.log('action: ', action);
         state.teachers = action.payload;
       })
       .addCase(addTeacher.fulfilled, (state, action) => {

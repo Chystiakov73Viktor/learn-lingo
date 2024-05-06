@@ -5,7 +5,7 @@ import { Notify } from 'notiflix';
 export const fetchGetTeachers = async () => {
   try {
     const teachersRef = ref(database, 'teachers');
-    
+
     const snapshot = await get(teachersRef);
     const data = snapshot.val();
 
