@@ -13,7 +13,6 @@ export const selectFilteredCard = createSelector(
     selectFilteredLevel,
   ],
   (teachers, languagesFiltered, priceFilter, levelFilter) => {
-    console.log('teachers: ', teachers);
     let filteredCard = [];
 
       if (languagesFiltered) {
