@@ -13,6 +13,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Tellmea secret!
+        run: echo "My existing secretis ${{ secrets.VITE_API_TEST }}"
+
       - name: Install, build 🔧
         run: |
           npm install
