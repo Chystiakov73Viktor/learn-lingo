@@ -1,10 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
-const API_KEY = import.meta.env.VITE_API_TEST;
+const VITE_API_KEY = import.meta.env.VITE_API_TEST;
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: VITE_API_KEY,
   authDomain: 'language-workshop-online.firebaseapp.com',
   projectId: 'language-workshop-online',
   storageBucket: 'language-workshop-online.appspot.com',
