@@ -1,11 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
-const API_KEY = process.env.VITE_API_TEST;
-console.log('API_KEY: ', API_KEY);
+const {VITE_API_TEST} = process.env;
+console.log('VITE_API_TEST: ', VITE_API_TEST);
+
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: VITE_API_TEST,
   authDomain: 'language-workshop-online.firebaseapp.com',
   projectId: 'language-workshop-online',
   storageBucket: 'language-workshop-online.appspot.com',
