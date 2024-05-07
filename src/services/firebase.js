@@ -4,6 +4,7 @@ import { getDatabase } from 'firebase/database';
 // const API_KEY = import.meta.env.VITE_API_TEST;
 // console.log('API_KEY: ', API_KEY);
 
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBzEpGiN4yVgPzb2Ap151gDghMIPHLetZU',
   authDomain: 'language-workshop-online.firebaseapp.com',
