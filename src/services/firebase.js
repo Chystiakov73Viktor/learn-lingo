@@ -1,11 +1,11 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
-import dotenv from 'dotenv';
 
-dotenv.config();
+const API_KEY = import.meta.env.VITE_API_KEY;
+console.log('API_KEY: ', API_KEY);
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: API_KEY,
   authDomain: 'language-workshop-online.firebaseapp.com',
   projectId: 'language-workshop-online',
   storageBucket: 'language-workshop-online.appspot.com',
