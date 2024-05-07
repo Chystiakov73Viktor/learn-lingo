@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
-const API_KEY = process.env.VITE_API_KEY;
+const API_KEY =  process.env['Google API Key'];
 console.log('API_KEY: ', API_KEY);
 
 
