@@ -5,7 +5,7 @@ const API_KEY = import.meta.env.VITE_API_TEST;
 console.log('API_KEY: ', API_KEY);
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: import.meta.env.VITE_API_TEST,
   authDomain: 'language-workshop-online.firebaseapp.com',
   projectId: 'language-workshop-online',
   storageBucket: 'language-workshop-online.appspot.com',
