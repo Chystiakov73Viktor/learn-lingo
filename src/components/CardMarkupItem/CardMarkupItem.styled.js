@@ -1,14 +1,14 @@
 import styled from 'styled-components';
+import { device } from '../device';
 
 export const LiWrapper = styled.li`
   position: relative;
-  display: flex;
   border-radius: 24px;
   padding: 24px;
-  width: 1184px;
   background: #fff;
-  &:not(:last-child) {
-    margin-bottom: 32px;
+
+  @media ${device.tablet} {
+    display: flex;
   }
 
   .buttonIcon {
@@ -23,6 +23,8 @@ export const LiWrapper = styled.li`
 
   .avatar {
     position: relative;
+    margin: auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +33,14 @@ export const LiWrapper = styled.li`
     border-radius: 100px;
     width: 120px;
     height: 120px;
-    margin-right: 48px;
+  }
+
+  @media ${device.tablet} {
+    .avatar {
+      margin: 0;
+      margin-right: 48px;
+      margin-bottom: 0;
+    }
   }
 
   .avatarUrl {
@@ -61,6 +70,7 @@ export const LiWrapper = styled.li`
   .listInfo {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 8px;
   }
 
@@ -72,11 +82,20 @@ export const LiWrapper = styled.li`
   }
 
   .itemInfo:first-child {
-    margin-right: 192px;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     color: #8a8a89;
+  }
+  @media ${device.tablet} {
+    .itemInfo:first-child {
+      margin-right: 16px;
+    }
+  }
+  @media ${device.desktop} {
+    .itemInfo:first-child {
+      margin-right: 192px;
+    }
   }
 
   .itemInfo:not(:first-child):not(:last-child)::after {
@@ -193,6 +212,7 @@ export const LiWrapper = styled.li`
 
   .listButton {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
   }
 
@@ -201,9 +221,7 @@ export const LiWrapper = styled.li`
     border-radius: 35px;
     background-color: inherit;
     padding: 8px 12px;
-    transition:
-      background-color 300ms linear,
-      box-shadow 300ms linear;
+    transition: background-color 300ms linear, box-shadow 300ms linear;
   }
 
   .levelButton.selected {
@@ -226,9 +244,7 @@ export const LiWrapper = styled.li`
     line-height: 156%;
     color: #121417;
     margin-top: 32px;
-    transition:
-      background-color 300ms linear,
-      box-shadow 300ms linear;
+    transition: background-color 300ms linear, box-shadow 300ms linear;
     &:focus,
     &:hover {
       background-color: #f4c550;

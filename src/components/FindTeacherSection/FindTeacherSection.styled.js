@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../device';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,10 +9,17 @@ export const Wrapper = styled.div`
 
   .wrapperTextImg {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     width: calc(100% + 128px);
     margin-left: -64px;
     margin-right: -64px;
+  }
+  
+  @media ${device.desktop} {
+    .wrapperTextImg {
+      flex-wrap: nowrap;
+    }
   }
 
   .containerText {
@@ -51,13 +59,18 @@ export const Wrapper = styled.div`
   }
 
   .title {
-    width: 548px;
     font-weight: 500;
     font-size: 48px;
     line-height: 117%;
     letter-spacing: -0.02em;
     color: #121417;
     margin-bottom: 32px;
+  }
+
+  @media ${device.tablet} {
+    .title {
+      width: 548px;
+    }
   }
 
   .buttonTitle {
@@ -83,12 +96,17 @@ export const Wrapper = styled.div`
   }
 
   .text {
-    width: 471px;
     font-size: 16px;
     line-height: 137%;
     letter-spacing: -0.02em;
     color: #121417;
     margin-bottom: 64px;
+  }
+
+  @media ${device.tablet} {
+    .text {
+      width: 471px;
+    }
   }
 
   .buttonStarted {
@@ -115,6 +133,11 @@ export const Wrapper = styled.div`
     }
   }
 
+  .listTutors {
+    display: none;
+  }
+
+  @media ${device.desktop} {
   .listTutors {
     display: flex;
     align-items: center;
@@ -152,6 +175,7 @@ export const Wrapper = styled.div`
     letter-spacing: -0.02em;
     color: rgba(18, 20, 23, 0.7);
   }
+}
 `;
 
 export const Button = styled.button``;
