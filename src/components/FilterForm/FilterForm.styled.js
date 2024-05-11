@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   .form {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 32px;
   }
