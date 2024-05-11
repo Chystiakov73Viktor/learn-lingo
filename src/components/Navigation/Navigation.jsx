@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { NavWrapper } from './Navigation.styled';
+import { NavMobileWrapper, NavWrapper } from './Navigation.styled';
 import { selectUserIsSignIn } from '../../redux/users/selects';
 
-const Navigation = () => {
+export const  Navigation = () => {
   const isLoading = useSelector(selectUserIsSignIn);
   return (
     <NavWrapper>
@@ -22,4 +22,34 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+
+export const NavigationMobile = ({ setIsMenuOpen }) => {
+  const isLoading = useSelector(selectUserIsSignIn);
+  return (
+    <NavMobileWrapper>
+      <NavLink
+        onClick={() => setIsMenuOpen(false)}
+        className="navigation-link"
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        onClick={() => setIsMenuOpen(false)}
+        className="navigation-link"
+        to="/teachers"
+      >
+        Teachers
+      </NavLink>
+      {isLoading && (
+        <NavLink
+          onClick={() => setIsMenuOpen(false)}
+          className="navigation-link"
+          to="/favorites"
+        >
+          Favorites
+        </NavLink>
+      )}
+    </NavMobileWrapper>
+  );
+};
