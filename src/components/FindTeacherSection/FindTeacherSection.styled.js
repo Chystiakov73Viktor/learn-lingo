@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 24px;
   background: #fff;
+  margin-bottom: 20px;
 
   .wrapperTextImg {
     display: flex;
