@@ -14,7 +14,6 @@ import { Modal } from 'components/Modal/Modal';
 export const AppBar = () => {
   const isSignin = useSelector(selectUserIsSignIn);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  console.log('isMenuOpen: ', isMenuOpen);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
