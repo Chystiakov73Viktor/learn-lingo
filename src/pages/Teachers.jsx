@@ -12,6 +12,7 @@ import { selectFilteredCard } from '../redux/filter/selects';
 function Teachers() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectTeacherIsLoading);
+  console.log('isLoading: ', isLoading);
   const filteredCard = useSelector(selectFilteredCard);
 
   const itemsPerPage = 4;
