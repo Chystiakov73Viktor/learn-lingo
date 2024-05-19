@@ -24,7 +24,7 @@ function Favorites() {
         <Loader />
       ) : (
         <>
-          {favoritesFiltered.length !== 0 ? (
+          {favoritesFiltered && favoritesFiltered.length !== 0 ? (
             <>
             <FilterForm />
             <Paginator
