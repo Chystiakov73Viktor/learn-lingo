@@ -5,7 +5,7 @@ export const CardMarkupList = ({ dataCard }) => {
   return (
     <DivWrapper>
       <ul className="list">
-        {dataCard.map(item => (
+        {dataCard && dataCard.map(item => (
           <CardMarkupItem key={item.id} cardData={item} />
         ))}
       </ul>
