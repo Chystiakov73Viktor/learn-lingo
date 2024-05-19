@@ -87,6 +87,6 @@ export const selectFilteredFavorites = createSelector(
       filteredFavorites = [...favorites];
     }
 
-    return filteredFavorites;
+    return filteredFavorites || [];
   }
 );
