@@ -10,7 +10,6 @@ import { selectFilteredFavorites } from '../redux/filter/selects';
 
 function Favorites() {
   const favoritesFiltered = useSelector(selectFilteredFavorites);
-  console.log('favoritesFiltered: ', favoritesFiltered);
   const isLoading = useSelector(selectTeacherIsLoading);
 
   const itemsPerPage = 4;
