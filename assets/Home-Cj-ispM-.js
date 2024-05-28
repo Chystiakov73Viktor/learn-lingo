@@ -1,4 +1,4 @@
-import{u as n,d as r,a as j,r as a,j as t,I as T}from"./index-Dccm8c-u.js";import{S as w}from"./Section-DC6zktLI.js";const k=n.div`
+import{u as n,d as r,a as j,r as a,j as t,I as T}from"./index-CROTRb47.js";import{S as w}from"./Section-COgf5mNi.js";const k=n.div`
   display: flex;
   flex-direction: column;
   gap: 24px;

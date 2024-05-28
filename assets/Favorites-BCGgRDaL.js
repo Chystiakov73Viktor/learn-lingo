@@ -1,4 +1,4 @@
-import{u as n,j as e,c as r,L as d}from"./index-Dccm8c-u.js";import{S as l}from"./Section-DC6zktLI.js";import{b as c,s as g,F as m,P as h,C as u}from"./CardMarkupList-CCKX6Dqa.js";const x="/learn-lingo/assets/default-CR71aU9P.jpg",f=n.div`
+import{u as n,j as e,c as r,L as d}from"./index-CROTRb47.js";import{S as l}from"./Section-COgf5mNi.js";import{b as c,s as g,F as m,P as h,C as u}from"./CardMarkupList-JaNpLhKC.js";const x="/learn-lingo/assets/default-CR71aU9P.jpg",f=n.div`
   .containerImg {
     width: 100%;
     height: 700px;
