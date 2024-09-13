@@ -38,7 +38,7 @@ const Signup = ({ onClose }) => {
         );
 
         if (error) {
-          Notify.failure(payload);
+          Notify.failure(payload.message || 'Signup failed');
           console.error('Signup error:', payload);
         } else {
           resetForm();

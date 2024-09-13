@@ -5,7 +5,7 @@ export const DivWrapper = styled.div`
   border-radius: 15px;
   padding: 24px;
   width: 300px;
-  background: #f8f8f8;
+  background: #fff;
 
   .buttonClose {
     position: absolute;

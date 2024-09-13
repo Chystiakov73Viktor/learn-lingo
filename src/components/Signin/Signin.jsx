@@ -27,17 +27,17 @@ const Signin = ({ onClose }) => {
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
-        const { error, payload } = await dispatch(
+        const result = await dispatch(
           signinThunk({
             email: values.userEmail,
             password: values.userPassword,
           })
         );
 
-        if (error) {
-          Notify.failure(payload);
-        } else {
+        if (signinThunk.fulfilled.match(result)) {
           resetForm();
+        } else {
+          Notify.failure(result.payload.message || 'Sign in failed');
         }
       } catch (error) {
         console.error('Unexpected error:', error);
@@ -65,7 +65,7 @@ const Signin = ({ onClose }) => {
       <h2 className="signinTitle">Sign In</h2>
       <p className="signinText">
         Welcome back! Please enter your credentials to access your account and
-        continue your search for an teacher.
+        continue your search for a teacher.
       </p>
       <form className="signinForm" onSubmit={handleSubmit}>
         <div className="inputWrapper">

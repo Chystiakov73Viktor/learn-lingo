@@ -7,9 +7,11 @@ import {
   updateProfile,
   getIdToken,
 } from 'firebase/auth';
+import { getDatabase, ref, set, get } from 'firebase/database';
 import { app } from '../../services/firebase';
 
 const auth = getAuth(app);
+const database = getDatabase(app);
 
 export const signupThunk = createAsyncThunk(
   'users/signup',
@@ -24,10 +26,17 @@ export const signupThunk = createAsyncThunk(
 
       await updateProfile(auth.currentUser, {
         displayName: credentials.name,
-        photoURL: credentials.avatarURL,
+        photoURL: credentials.avatarURL || '',
       });
 
       const token = await getIdToken(user);
+
+      // Запис даних користувача в базу даних
+      await set(ref(database, 'users/' + user.uid), {
+        name: credentials.name,
+        email: user.email,
+        ...(credentials.avatarURL && { avatarURL: credentials.avatarURL }),
+      });
 
       return {
         email: user.email,
@@ -35,7 +44,7 @@ export const signupThunk = createAsyncThunk(
         token,
       };
     } catch (error) {
-      return rejectWithValue.rejectWithValue({
+      return rejectWithValue({
         message: error.message,
         type: 'authError',
       });
@@ -53,17 +62,21 @@ export const signinThunk = createAsyncThunk(
         credentials.password
       );
       const user = userCredential.user;
- 
+
       const token = await getIdToken(user);
+
+      // Отримання даних користувача з бази даних
+      const snapshot = await get(ref(database, 'users/' + user.uid));
+      const userData = snapshot.val();
 
       return {
         email: user.email,
         name: user.displayName,
-        avatarURL: user.photoURL,
+        avatarURL: userData.avatarURL,
         token,
       };
     } catch (error) {
-      return rejectWithValue.rejectWithValue({
+      return rejectWithValue({
         message: error.message,
         type: 'authError',
       });
